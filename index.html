@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OMDB Explorer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container">
+        <h1>OMDB Explorer</h1>
+        <p class="subtitle">Search and explore movies, series, and episodes.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="search-panel" aria-label="Movie Search Controls">
+        <form id="search-form" class="search-form" novalidate>
+          <label for="search-input" class="label">Title</label>
+          <input
+            id="search-input"
+            name="search"
+            type="text"
+            placeholder="Type a movie title..."
+            autocomplete="off"
+          />
+
+          <div class="filters">
+            <div class="filter-group">
+              <label for="type-filter" class="label">Type</label>
+              <select id="type-filter" name="type">
+                <option value="">All</option>
+                <option value="movie">Movie</option>
+                <option value="series">Series</option>
+                <option value="episode">Episode</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="year-filter" class="label">Year</label>
+              <input
+                id="year-filter"
+                name="year"
+                type="number"
+                min="1900"
+                max="2100"
+                placeholder="e.g. 2014"
+              />
+            </div>
+          </div>
+        </form>
+
+        <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+      </section>
+
+      <section id="results" class="results" aria-label="Movie Results"></section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
